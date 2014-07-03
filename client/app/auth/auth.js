@@ -4,6 +4,13 @@
 angular.module('shortly.auth', [])
 
 .controller('AuthController', function ($scope, $window, $location, Auth) {
+  Auth.isAuth().then(function (signedIn) {
+    if (signedIn) {
+      // Redirect to /links
+      $location.path('/links');
+    }
+  });
+
   $scope.user = {};
 
   $scope.signin = function () {
