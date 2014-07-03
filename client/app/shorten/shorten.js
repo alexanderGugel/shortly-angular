@@ -7,8 +7,8 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function () {
     $scope.loading = true;
     Links.addLink($scope.link).then(function(){
-      console.log($scope.url);
       $scope.loading = false;
+      $scope.link.url = undefined;
     }).catch(function (error) {
       $scope.loading = false;
       $scope.message =  "Invalid URL. Please try another.";
