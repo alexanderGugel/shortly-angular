@@ -1,10 +1,13 @@
+<a href="#/links">Click here to go to links page.</a><br>
+
 <div id='container' class="creator" ng-controller="ShortenController">
-  <form ng-submit="addLink(); link.url=''">
+  <form name="shortenForm" ng-submit="addLink(); link.url=''" novalidate>
     Please enter the URL you want to shorten:<br>
-    <input type="text" ng-model="link.url" placeholder="E.g.: http://google.com"><br>
+    <input name="url" type="url" ng-model="link.url" placeholder="E.g.: http://google.com" ng-required><br>
     <button>Submit</button><br>
     <img class='spinner' src='assets/spiffygif_46x46.gif' ng-show="loading"><br>
     <div class='message'>{{ message }}</div>
+    <div class="message" ng-show="shortenForm.url.$invalid">Invalid URL. Please Try again.</div>
   </form>
 </div>
 

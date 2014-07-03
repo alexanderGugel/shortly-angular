@@ -13,7 +13,7 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
-        console.error(error);
+        $scope.error = 'Invalid username/ password combination.';
       });
   };
 
@@ -24,7 +24,7 @@ angular.module('shortly.auth', [])
         $location.path('/links');
       })
       .catch(function (error) {
-        console.error(error);
+        $scope.error = 'Username is already taken.';
       });
   };
 });
