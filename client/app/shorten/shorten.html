@@ -1,6 +1,9 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' class="creator" ng-controller="ShortenController">
+  <form ng-submit="addLink()">
+    Please enter the URL you want to shorten:<br>
+    <input type="text" ng-model="link.url" placeholder="E.g.: http://google.com"><br>
+    <button>Submit</button>
+  </form>
 </div>
 
 
