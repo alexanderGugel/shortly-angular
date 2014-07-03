@@ -1,8 +1,9 @@
 <a href="#/shorten">Click here to go to shorten page.</a><br>
 
 <div id='container' ng-controller='LinksController'>
+  <input type='text' placeholder='search for a link' ng-model='filter'>
   <ul>
-    <li class="link" ng-repeat="link in data.links | orderBy:'-visits'">
+    <li class="link" ng-repeat="link in data.links | filter:filter | orderBy:'-visits'">
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
       <div class='title'>{{link.title}}</div>
       <div class='original'>{{link.url}}</div>
