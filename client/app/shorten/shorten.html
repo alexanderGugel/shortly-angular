@@ -1,8 +1,10 @@
 <div id='container' class="creator" ng-controller="ShortenController">
-  <form ng-submit="addLink()">
+  <form ng-submit="addLink(); link.url=''">
     Please enter the URL you want to shorten:<br>
     <input type="text" ng-model="link.url" placeholder="E.g.: http://google.com"><br>
-    <button>Submit</button>
+    <button>Submit</button><br>
+    <img class='spinner' src='assets/spiffygif_46x46.gif' ng-show="loading"><br>
+    <div class='message'>{{ message }}</div>
   </form>
 </div>
 

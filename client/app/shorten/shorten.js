@@ -10,7 +10,8 @@ angular.module('shortly.shorten', [])
       console.log($scope.url);
       $scope.loading = false;
     }).catch(function (error) {
-      throw error;
+      $scope.loading = false;
+      $scope.message =  "Invalid URL. Please try another."
     });
   };
 });
