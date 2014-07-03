@@ -11,7 +11,7 @@ angular.module('shortly.shorten', [])
       $scope.loading = false;
     }).catch(function (error) {
       $scope.loading = false;
-      $scope.message =  "Invalid URL. Please try another."
+      $scope.message =  "Invalid URL. Please try another.";
     });
   };
 });
