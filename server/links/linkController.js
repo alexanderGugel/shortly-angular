@@ -55,6 +55,7 @@ module.exports = {
           var newLink = {
             url: url,
             visits: 0,
+            visitTimestamps: [],
             base_url: req.headers.origin,
             title: title
           };
@@ -74,6 +75,7 @@ module.exports = {
   navToLink: function (req, res, next) {
     var link = req.navLink;
     link.visits++;
+    link.visitTimestamps.push(new Date());
     link.save(function (err, savedLink) {
       if (err) {
         next(err);

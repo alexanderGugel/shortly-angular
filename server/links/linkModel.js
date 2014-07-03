@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 
 var LinkSchema = new mongoose.Schema({
  visits: Number,
+ visitTimestamps: Array,
  link: String,
  title: String,
  code: String,
