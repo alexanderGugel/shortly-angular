@@ -48,6 +48,8 @@ angular.module('shortly', [
   return attach;
 })
 .run(function ($rootScope, $location, Auth) {
+  $rootScope.signout = Auth.signout;
+
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized
